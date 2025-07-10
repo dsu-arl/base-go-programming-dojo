@@ -1,0 +1,42 @@
+#!/usr/bin/exec-suid --real -- /usr/bin/python -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+import subprocess
+import os
+import re
+
+def main(command: str):
+    
+    results = subprocess.run(command,capture_output=True, text=True)
+    regex = re.compile("Hello World!\n")
+
+    temp = regex.findall(results.stdout)
+    if len(temp) != 1:
+        print("There's a problem with your output. Please ensure you're printing ONLY `Hello World!` to the screen.")
+        print("HINT: Capitalization matters!")
+    else:
+        print("Congratulations!")
+        print_flag()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting")
+        sys.exit(0)
+    else:
+        testFile = os.getcwd() + "/" + sys.argv[1]
+        if not os.path.isfile(testFile):
+            print("ERROR: File does not exist in current directory, exiting")
+            sys.exit(0)
+    
+    commandToRun = "./" + sys.argv[1]
+    main(commandToRun)
