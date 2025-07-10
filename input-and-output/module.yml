@@ -1,0 +1,5 @@
+name: Input and Output
+challenges:
+- id: printing
+  name: Printing
+  allow_privileged: false
