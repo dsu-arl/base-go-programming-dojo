@@ -16,7 +16,7 @@ fmt.Println("temp =",temp,"which is my variables value")
 ```
 
 This will result in the following output
-```
+```text
 0
 My variable's value is: 0
 0 is my variable's value.
@@ -30,4 +30,4 @@ Use Go to print the text 'Hello World!' to the screen.
 2. Create a new file with the file extension `.go`.
 3. Write the Go code to print the text 'Hello World!'.h
 4. Open a terminal in VSCode and test your code with the commands `go build yourFile.go` and `./yourFile`.
-5. Verify your solution by running the command `cd /challenge` and `python verify /home/hacker/Documents/yourFile`
+5. Verify your solution by running the command `cd /challenge` and `./verify yourFile`
