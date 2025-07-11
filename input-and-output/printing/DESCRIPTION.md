@@ -26,7 +26,8 @@ var = 0 which is my variables value
 
 # Challenge
 Use Go to print the text 'Hello World!' to the screen.
-1. Create a new file with the file extension `.go`.
-2. Write the Go code to print the text 'Hello World!'.
-3. Test your code with `go build yourFile.go` and `./yourFile`.
-4. Verify your solution with `verify yourFile`.
+1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
+2. Create a new file with the file extension `.go`.
+3. Write the Go code to print the text 'Hello World!'.h
+4. Open a terminal in VSCode and test your code with the commands `go build yourFile.go` and `./yourFile`.
+5. Verify your solution by running the command `cd /challenge` and `python verify /home/hacker/Documents/yourFile`

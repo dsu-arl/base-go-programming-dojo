@@ -26,6 +26,9 @@ RUN <<EOF
     update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.12 1
 EOF
 
+RUN ln -s /usr/local/go/bin/go /usr/local/bin/go
+COPY bash.bashrc /etc/bash.bashrc
+
 RUN <<EOF
     rm -rf /usr/src/Python-3.12.0
     rm /usr/src/Python-3.12.0.tgz
