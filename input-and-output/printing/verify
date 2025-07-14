@@ -19,7 +19,7 @@ def main(filename: str):
     command = "/home/hacker/Documents/" + filename
 
     results = subprocess.run(command,capture_output=True, text=True)
-    regex = re.compile("Hello World!\n")
+    regex = re.compile("Hello World!\n", flagse=re.IGNORECASE)
 
     temp = regex.findall(results.stdout)
     if len(temp) != 1:

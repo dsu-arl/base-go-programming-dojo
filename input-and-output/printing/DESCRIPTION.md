@@ -29,5 +29,6 @@ Use Go to print the text 'Hello World!' to the screen.
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
 2. Create a new file with the file extension `.go`.
 3. Write the Go code to print the text 'Hello World!'.
-4. Open a terminal in VSCode and test your code with the commands `go build yourFile.go` and `./yourFile`.
-5. Verify your solution by running the command `cd /challenge` and `./verify yourFile`
+4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
+5. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
+    - `yourFile` must be the built Go program, not your `.go` source code file.
