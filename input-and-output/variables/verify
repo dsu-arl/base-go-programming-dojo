@@ -1,0 +1,44 @@
+#!/usr/bin/exec-suid --real -- /usr/bin/python -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+import subprocess
+import os
+import re
+
+def main(filename: str):
+    
+    # command = "/home/hacker/Documents/" + filename
+    command = "./"+filename
+    results = subprocess.run(command,capture_output=True, text=True)
+
+    boolResult = re.search("(true|false)", results.stdout)
+    print(boolResult)
+
+
+
+    # if len(temp) != 3:
+    #     print("There's a problem with your output. Please ensure you're printing three lines to the screen.")
+    # else:
+    #     print("Congratulations!")
+    #     print_flag()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting.")
+        sys.exit(0)
+    
+    if sys.argv[1].count("/") != 0:
+        print("ERROR: Only supply the name of your file, exiting.")
+        sys.exit(0)
+
+    main(sys.argv[1])
