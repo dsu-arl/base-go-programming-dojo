@@ -1,4 +1,4 @@
-#!/usr/bin/exec-suid --real -- /usr/bin/python -I
+#!/usr/bin/exec-suid --real -- /usr/bin/python3 -I
 import sys
 sys.path.append('/challenge')
 
@@ -14,10 +14,12 @@ import subprocess
 import os
 import re
 
-def main(command: str):
+def main(filename: str):
     
+    command = "/home/hacker/Documents/" + filename
+
     results = subprocess.run(command,capture_output=True, text=True)
-    regex = re.compile("Hello World!\n")
+    regex = re.compile("Hello World!\n", flags=re.IGNORECASE)
 
     temp = regex.findall(results.stdout)
     if len(temp) != 1:
@@ -30,13 +32,11 @@ def main(command: str):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("ERROR: Missing file to verify, exiting")
+        print("ERROR: Missing file to verify, exiting.")
         sys.exit(0)
-    else:
-        testFile = os.getcwd() + "/" + sys.argv[1]
-        if not os.path.isfile(testFile):
-            print("ERROR: File does not exist in current directory, exiting")
-            sys.exit(0)
     
-    commandToRun = "./" + sys.argv[1]
-    main(commandToRun)
+    if sys.argv[1].count("/") != 0:
+        print("ERROR: Only supply the name of your file, exiting.")
+        sys.exit(0)
+
+    main(sys.argv[1])
