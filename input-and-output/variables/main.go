@@ -1,9 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("hello")
-	fmt.Println("hello")
-	fmt.Println("hello")
+
+	myInt := -123
+	// myString := "hello world"
+	myBool := false
+
+	fmt.Println(myInt)
+	// fmt.Println(myString)
+	fmt.Println(myBool)
 }

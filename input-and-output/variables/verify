@@ -21,9 +21,20 @@ def main(filename: str):
     results = subprocess.run(command,capture_output=True, text=True)
 
     boolResult = re.search("(true|false)", results.stdout)
-    print(boolResult)
+    if not boolResult:
+        print("ERROR: Missing boolean value in output, try again!")
+        sys.exit(0)
 
+    intResult = re.search("-?[0-9]{1,19}", results.stdout)
+    # max.intValue for go program - 9223372036854775807 (2^63)
+    if not intResult:
+        print("ERROR: Missing int value in output, try again!")
+        sys.exit(0)
 
+    stringResult = re.search("[a-zA-Z]*", results.stdout)
+    if not stringResult:
+        print("ERROR: Missing string value in your output, try again!")
+        sys.exit(0)
 
     # if len(temp) != 3:
     #     print("There's a problem with your output. Please ensure you're printing three lines to the screen.")
