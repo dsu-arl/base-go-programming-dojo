@@ -6,11 +6,7 @@ import (
 
 func main() {
 
-	myInt := -123
-	// myString := "hello world"
-	myBool := false
-
-	fmt.Println(myInt)
-	// fmt.Println(myString)
-	fmt.Println(myBool)
+	fmt.Println("My boolean's value is:")
+	fmt.Println("My string's value is:")
+	fmt.Println("My integer's value is:")
 }

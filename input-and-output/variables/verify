@@ -20,18 +20,18 @@ def main(filename: str):
     command = "./"+filename
     results = subprocess.run(command,capture_output=True, text=True)
 
-    boolResult = re.search("(true|false)", results.stdout)
+    boolResult = re.search("My boolean's value is: *(true|false)", results.stdout)
     if not boolResult:
         print("ERROR: Missing boolean value in output, try again!")
         sys.exit(0)
 
-    intResult = re.search("-?[0-9]{1,19}", results.stdout)
+    intResult = re.search("My integer's value is: *-?[0-9]{1,19}", results.stdout)
     # max.intValue for go program - 9223372036854775807 (2^63)
     if not intResult:
         print("ERROR: Missing int value in output, try again!")
         sys.exit(0)
 
-    stringResult = re.search("[a-zA-Z]*", results.stdout)
+    stringResult = re.search("My string's value is: *[a-zA-Z]*", results.stdout)
     if not stringResult:
         print("ERROR: Missing string value in your output, try again!")
         sys.exit(0)

@@ -19,7 +19,7 @@ var myVariable := 0
 In the first case the value is not provided, which simply creates the variable `myVariable`. The second case stores `0` in the variable `myVariable`. Here the type is **inferred** by the Go compiler later on. You can learn more about type inferrence [here](https://go.dev/blog/type-inference).
 
 ## Second technique
-The next technique is comparatively simple: `myVariable := 0`. This technique is equivalent to the first, in that it stores a value in a variable. But it offers a little more flexibility in its usage. With this technique you can assign multiple variables, and of different types, on the same line!
+The next technique is comparatively simple: `myVariable := 0`. This technique is equivalent to the first, in that it stores a value in a variable. But it offers a little more flexibility in its usage. With this technique you can assign values to multiple variables, and of different types, all on the same line!
 ```go
 myInt, myString = 0, "Test String"
 ```
@@ -42,11 +42,19 @@ var myString string := "This is my string!"
 mySecondString := "Here is another string!"
 ```
 
-### Integers
-In Go you can be very specific about the type of integer you want to create, similar to C. You can create `int8` all the way to `int64`, and the same goes for the `uint` data type.
+### Signed and Unsigned Integers
+Go provides access to both signed integers (int) and unsigned integers (uint). Signed integers are called that because they can hold either positive or negative values, whereas unsigned integers can only hold positive values. To do this, the highest order bit (most significant bit) of signed integers is used to reflect positive (0) or negative (1) values. Becaues of this, the maximum and minimum value that a signed 32-bit integer can be is 2^31, or +/-2,147,483,648. Whereas its unsigned counterpart's maximum value is 2^32, or +4,294,967,296.
+
+In Go you can be very specific about the type of integer you want to create, similar to C. The following are the types of integers that Go supports.
+- `int` or `uint` (equivalent to either int32/int64 or uint32/uint64 depending on the system.)
+- `int8` or `uint8`
+- `int16` or `uint16`
+- `int32` or `uint32`
+- `int64` or `uint64`
+
 
 # Challenge
-In this challenge, you will utilize the provided `main.go` template to print three different variables, with three different data types, to the screen. You will print a **string**, **signed integer**, and **boolean** value to the screen each on their own line. Do not use any special characters in the string! Below is an example:
+In this challenge, you will utilize the provided `main.go` template to print three different variables, with three different data types, to the screen. You will print a **string**, **signed integer**, and **boolean** value to the screen each on their own line. Do not use any special characters in the string! Below is an example of possible output:
 ```
 Hello world
 31615
@@ -54,9 +62,7 @@ true
 ```
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
-2. Create a new file with the file extension `.go`.
-3. Write the Go code to print the text 'Hello World!'.
-4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-5. Verify your solution by running the command `cd /challenge` and `./verify yourFile.go yourFile`.
-    - `yourFile.go` must be the *source code* for your Go program.
+2. Modify the Go code to print a string, signed integer, and boolean value to the screen.
+3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+4. Verify your solution by running the command `cd /challenge` and `./verify main`.
     - `yourFile` must be the built Go program executable.
