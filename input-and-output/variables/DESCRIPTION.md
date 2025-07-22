@@ -27,13 +27,12 @@ myInt, myString = 0, "Test String"
 ## Data types
 Go supports all the usual data types you'd expect. As other data types are used they'll be described in the same training. An exhaustive list won't be provided, but the basic types include:
 
-|Name|Keyword|
-|-|-|
-|strings|`string`|
-|signed integers|`int`|
-|unsigned integers|`uint`|
-|floats|`float32` or `float64`|
-|boolean|`bool`|
+Name and Keyword
+- strings - `string`
+- signed integers - `int`
+- unsigned integers - `uint`
+- floats - `float32` or `float64`
+- boolean - `bool`
 
 ### Strings
 Strings in Go are effectively the same as strings in other languages: letters, special characters, and/or numbers all enclosed in double quotes. Single characters however *are* different in Go, and will be discussed separately. Below is an example of a string variable using both techniques
