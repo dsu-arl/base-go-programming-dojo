@@ -62,7 +62,9 @@ true
 ```
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
-2. Modify the Go code to print a string, signed integer, and boolean value to the screen.
-3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
-4. Verify your solution by running the command `cd /challenge` and `./verify main`.
+    - If the folder does not exist, open the folder "/home/hacker" and create it with either the terminal command `mkdir Documents` or through the VSCode interface.
+2. Create a new file with the file extension `.go`.
+3. Write the go code to print a string, signed integer, and boolean value to the screen.
+4. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+5. Verify your solution by running the command `cd /challenge` and `./verify main`.
     - `yourFile` must be the built Go program executable.

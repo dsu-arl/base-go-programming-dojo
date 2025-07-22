@@ -27,6 +27,7 @@ var = 0 which is my variables value
 # Challenge
 Use Go to print the text 'Hello World!' to the screen.
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
+    - If the folder does not exist, open the folder "/home/hacker" and create it with either the terminal command `mkdir Documents` or through the VSCode interface.
 2. Create a new file with the file extension `.go`.
 3. Write the Go code to print the text 'Hello World!'.
 4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
