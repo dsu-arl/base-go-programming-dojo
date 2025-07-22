@@ -3,3 +3,6 @@ challenges:
 - id: printing
   name: Printing
   allow_privileged: false
+- id: variables
+  name: Variables
+  allow_privileged: false
