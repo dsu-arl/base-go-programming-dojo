@@ -59,9 +59,10 @@ Hello world
 31615
 true
 ```
+Remember that each `Println` ends with a newline, so three `Println` function calls will emit three lines of text.
 
-1. Open a new VSCode Workspace environment and open the folder "/home/hacker/Documents".
-    - If the folder does not exist, open the folder "/home/hacker" and create it with either the terminal command `mkdir Documents` or through the VSCode interface.
+1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
+    - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
 2. Create a new file with the file extension `.go`.
 3. Write the go code to print a string, signed integer, and boolean value to the screen.
 4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
