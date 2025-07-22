@@ -16,9 +16,7 @@ import re
 
 def main(filename: str):
     
-    # command = "/home/hacker/Documents/" + filename
-    command = "./"+filename
-    results = subprocess.run(command,capture_output=True, text=True)
+    results = subprocess.run(filename,capture_output=True, text=True)
     
     if 3 != str.count(results.stdout, "\n"):
         print("ERROR: You must print three things to the screen. Try again!")
