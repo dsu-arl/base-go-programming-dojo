@@ -6,3 +6,6 @@ challenges:
 - id: variables
   name: Variables
   allow_privileged: false
+- id: user-input
+  name: User Input
+  allow_privileged: false
