@@ -18,6 +18,11 @@ var myVariable := 0
 ```
 In the first case the value is not provided, which simply creates the variable `myVariable`. The second case stores `0` in the variable `myVariable`. Here the type is **inferred** by the Go compiler later on. You can learn more about type inferrence [here](https://go.dev/blog/type-inference).
 
+If you need to use multiple integers in your program, you can define multiple in one declaration. Note however you cannot assign multiple values using this format; that is discussed next!
+```go
+var myFirstVar, mySecondVar int
+```
+
 ## Second technique
 The next technique is comparatively simple: `myVariable := 0`. This technique is equivalent to the first, in that it stores a value in a variable. But it offers a little more flexibility in its usage. With this technique you can assign values to multiple variables, and of different types, all on the same line!
 ```go
