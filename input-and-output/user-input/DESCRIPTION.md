@@ -31,6 +31,18 @@ Sonoma
 ## Scanln()
 The `Scanln` function is nearly identical to `Scan` except it stops scanning for input when it detects a new line. So using the example above, 'INPUT ONE' and 'INPUT TWO' ***are not*** the same, and would result in "Mike Sonoma" and "Mike" being printed to the screen, respectively. Otherwise it behaves the exact same as `Scan`!
 
+## Scanf
+`Scanf` is the most versitle and complex choice out of the three choices. If you have programmed in C before, this will be the most familiar.
+
+### Format & Verbs
+Unlike the other scan functions, `Scanf` requires specific tokens, or verbs, to collect and store the input data appropriately. In this challenge we'll focus on just the common verbs you may encounter, but a complete list of possible verbs is provided on [their website](https://pkg.go.dev/fmt).
+
+When using verbs, the best practice is to chose the verb most aligned with your variables data type. Below is a small list of ones you'll see frequently.
+- `%d` : integer (base10 value)
+- `%s` : string
+- `%x` : hexadecimal value
+
+To use these, the format is `fmt.Scanf("%d", &varName)`. The `&` is important, but 
 
 # Challenge
 
