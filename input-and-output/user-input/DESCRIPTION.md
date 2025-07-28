@@ -42,14 +42,25 @@ When using verbs, the best practice is to chose the verb most aligned with your 
 - `%s` : string
 - `%x` : hexadecimal value
 
-To use these, the format is `fmt.Scanf("%d", &varName)`. The `&` is important, but 
+To use these, the format is `fmt.Scanf("%d", &varName)`. The `&` is important, but will be discussed in a different challenge. For now, know that it is required for nearly all use cases of the `Scanf` function.
+
+Similar to other scan functions, you can include multiple verbs in the function. For example.
+```go
+var myAge int
+var myName string
+
+fmt.Println("Please enter your age and name separated by spaces. For example: 19 Mikey".)
+fmt.Scanf("%d %s", &myAge, &myName)
+
+fmt.Println("Your name is", myName, " and your age is", myAge"")
+```
 
 # Challenge
+Your challenge is to prompt the user for 5 different numbers and then print them back to the screen in reverse order. You can use whatever `Scan` function you wish to complete this challenge. For example if the user inputed `1 5 3 10 53` your output must be `53 10 3 5 1`. When you print the numbers back to the screen, print them all in one line as shown above.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
-2. Create a new file with the file extension `.go`.
-3. 
-4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-5. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
-    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/Documents/yourFile".
+2. Create a new file with the file extension `.go` and write your solution.
+3. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
+4. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
+    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/yourFile" unless you organized your code differently.
