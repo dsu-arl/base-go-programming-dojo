@@ -68,8 +68,7 @@ Remember that each `Println` ends with a newline, so three `Println` function ca
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
-2. Create a new file with the file extension `.go`.
-3. Write the go code to print a string, signed integer, and boolean value to the screen.
-4. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-5. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
-    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/Documents/yourFile".
+2. Create a new file with the file extension `.go` and write your solution.
+3. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
+4. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
+    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/yourFile" unless you organized your code differently.
