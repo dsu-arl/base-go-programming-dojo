@@ -2,7 +2,7 @@
 So far we've learned how to create and store values in variables and print their values, along with other text, to the screen. But how do we write programs to get information from the user? That is exactly what this challenge will teach you!
 
 ## Scan()
-Much like `Println`, the functions discussed in this challenge all reside in the `fmt` package, and must be preceded with `fmt.`. The `Scan` function is probably the most straight forward one to use. If you want the user to provide a single value you provide one variable: doesn't matter if its an intereg, string, bool, or float.
+Much like `Println`, the functions discussed in this challenge all reside in the `fmt` package, and must be preceded with `fmt.`. The `Scan` function is probably the most straight forward one to use. If you want the user to provide a single value you provide one variable: doesn't matter if its an integer, string, bool, or float.
 ```go
 fname := ""
 
@@ -18,7 +18,7 @@ You can include multiple variables in the `Scan` statement separated by spaces. 
 fname, lname := "", ""
 
 fmt.Println("Please enter your first name")
-fmt.Scan(&fname &lname)
+fmt.Scan(&fname, &lname)
 
 fmt.Println("Your name is:", fname, lname)
 ```
@@ -32,12 +32,12 @@ Sonoma
 The `Scanln` function is nearly identical to `Scan` except it stops scanning for input when it detects a new line. So using the example above, 'INPUT ONE' and 'INPUT TWO' ***are not*** the same, and would result in "Mike Sonoma" and "Mike" being printed to the screen, respectively. Otherwise it behaves the exact same as `Scan`!
 
 ## Scanf
-`Scanf` is the most versitle and complex choice out of the three choices. If you have programmed in C before, this will be the most familiar.
+`Scanf` is the most versatile and complex choice out of the three choices. If you have programmed in C before, this will be the most familiar.
 
 ### Format & Verbs
 Unlike the other scan functions, `Scanf` requires specific tokens, or verbs, to collect and store the input data appropriately. In this challenge we'll focus on just the common verbs you may encounter, but a complete list of possible verbs is provided on [their website](https://pkg.go.dev/fmt).
 
-When using verbs, the best practice is to chose the verb most aligned with your variables data type. Below is a small list of ones you'll see frequently.
+When using verbs, the best practice is to pick the verb most aligned with your variables data type. Below is a small list of ones you'll see frequently.
 - `%d` : integer (base10 value)
 - `%s` : string
 - `%x` : hexadecimal value
@@ -49,14 +49,14 @@ Similar to other scan functions, you can include multiple verbs in the function.
 var myAge int
 var myName string
 
-fmt.Println("Please enter your age and name separated by spaces. For example: 19 Mikey".)
+fmt.Println("Please enter your age and name separated by spaces. For example: 19 Mikey.")
 fmt.Scanf("%d %s", &myAge, &myName)
 
-fmt.Println("Your name is", myName, " and your age is", myAge"")
+fmt.Println("Your name is", myName, " and your age is", myAge)
 ```
 
 # Challenge
-Your challenge is to prompt the user for 5 different numbers and then print them back to the screen in reverse order. You can use whatever `Scan` function you wish to complete this challenge. For example if the user inputed `1 5 3 10 53` your output must be `53 10 3 5 1`. When you print the numbers back to the screen, print them all in one line as shown above.
+Your challenge is to prompt the user for 5 different numbers and then print them back to the screen in reverse order. You can use whatever `Scan` function you wish to complete this challenge. For example if the user typed `1 5 3 10 53` your output must be `53 10 3 5 1`. When you print the numbers back to the screen, print them all in one line as shown above.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
