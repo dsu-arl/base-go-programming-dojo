@@ -26,6 +26,7 @@ var = 0 which is my variables value
 
 # Challenge
 Use Go to print the text 'Hello World!' to the screen.
+
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
 2. Create a new file with the file extension `.go` and write your solution.
