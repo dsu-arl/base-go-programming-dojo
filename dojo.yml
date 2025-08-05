@@ -4,4 +4,6 @@ modules:
 - id: input-and-output
   name: Input and Output
   image: whatupdoc6130/pwncollege:goenv
+- id: control-flow
+  name: Control Flow
 type: roadshow

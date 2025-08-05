@@ -1,0 +1,5 @@
+name: Control Flow
+challenges:
+- id: for-loops
+  name: For loops
+  allow_privileged: false
