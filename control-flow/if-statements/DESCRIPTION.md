@@ -204,24 +204,23 @@ A quick recap of everything covered by this content:
 What is covered here is just the beginning! More complex and challenging use-cases exist than we can possibly hope to address. Its up to you to explore and learn how to implement them in code!
 
 # Challenge
-You will implement a program that asks the user for a number. If the number is greater than 100, print to the screen "The number is too big, run the program again." Otherwise if the number is zero print to the screen "You cannot choose zero, run the program again." Include a default case that prints to the screen "Unexpected case, run the program again."
+You will implement a program that asks the user for a number. If the number is greater than 100, print to the screen "The number is too big, run the program again." Otherwise, if the number is less than zero, print to the screen "The number must be positive, run the program again.". Otherwise, if the number is zero print to the screen "You cannot choose zero, run the program again." Include a default case that prints to the screen "Evaluating the number..."
 
 In addition, you will implement the below functionality using if, else, and else if statements. 
-- If the number is even print to the screen "Your number is even." If it isn't even, print "Your number is odd" to the screen instead.
-- If the number is greater than 50, print to the screen "Your number is greater than 50". If it isn't, print "Your number is not greater than 50" instead.
-- If the number is GREATER than 50, is it greater than 75? If it isn't, print to the screen "The number is between 50 and 75." 
-- If the number is also GREATER than 75, is it greater than 90? If it isn't, print to the screen "The number is between 75 and 90."
-- If the number is not greater than 50, is it greater than 25? If it is, print to the screen "The number is between 25 and 50."
-- If the number is also LESS than 25, is it greater than 10? if it is, print to the screen "The number is between 10 and 25."
+- If the number is even, print to the screen "Your number is even." If it isn't even, print "Your number is odd" to the screen instead.
+- If the number is GREATER THAN 75, but LESS THAN 90, print to the screen "Your number is between 75 and 90." Otherwise, if the number GREATER THAN 50 but LESS THAN 75, print to the screen "Your number is between 50 and 75." Otherwise, print "Your number is less than 50."
+- If the number is GREATER THAN 10, but LESS THAN 25, print "Your number is between 10 and 25." Otherwise, if the number is GREATER THAN 25 but LESS THAN 50, print "Your number is between 25 and 50." Otherwise, print "You have a weird number..."
 
 A template has been provided; use the provided functions and add to the existing code where indicated.
 
 ## BONUS
 Once you have completed the challenge as described above, you may attempt this bonus challenge.
 
-The descriptions above do not consistently account for the case where numbers are equal. For example, examine the number 50. According to the descriptions, it will say "Your number is not greater than 50" then say "Your number is between 25 and 50" when in fact the number is exactly 50. These situations are often called "edge cases" by developers.
+The descriptions above do not consistently account for every possible scenario. For example, examine the number 50. According to the descriptions, it will say "Your number is less than 50." and then say "You have a weird number..." These situations are often called "edge cases" by developers.
 
 For this bonus, you will update your code to account for the edge cases where the user enters a value that matches a conditional check. For example if the user enters the number 50, instead of printing "greater than" or "less than" you will print "Your number is equal to 50." Other checks must be updated to either print "greater than or equal to" or "less than or equal to" as appropriate.
+
+Another unaccounted scenario exists where the number is between 90 and 100. Modify the existing control flow element to account for the this case, printing "Your number is between 90 and 100" (updating the wording as noted above.)
 
 > **HINT** There are multiple ways to solve this problem!
 

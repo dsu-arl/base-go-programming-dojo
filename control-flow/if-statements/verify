@@ -10,3 +10,25 @@ def print_flag():
         print("Error: Flag file not found.")
 
 # Add your imports and other code below here
+import os
+import subprocess
+import re
+
+def main(filename: str):
+
+    testCases = list(("-5", "0", "10", "25", "50", "75", "90", "100", "11", "12", "26", "27", "51", "52", "76", "77", "91", "92"))
+
+    for case in testCases:
+        results = subprocess.run([filename, case], capture_output=True)
+        print(results.stdout)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting.")
+        sys.exit(0)
+
+    if os.path.exists(sys.argv[1]):
+        main(sys.argv[1])
+    else:
+        print(f"ERROR: Cannot find file: {sys.argv[1]}, ensure it exists and try again.")
