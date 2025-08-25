@@ -123,6 +123,7 @@ Your program must implement the following functionality using the things you've 
 - For subsequent guesses, print the message "You still didn't guess it, would you like another hint? (y/n)" to the screen.
 - If the user asks more than three times for a hint, simply call the `hintGenerator` function in such a way that the default case will trigger (HINT: any value that isn't 0, 1, or 2 will trigger the default case.) Note that counting starts at 0!
 - When the user correctly guesses the number, print the message "Congratulations, you've guessed the number!" to the screen.
+- The program should loop until the user guesses the correct number.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
