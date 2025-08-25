@@ -220,4 +220,4 @@ A template has been provided; use the provided functions and add to the existing
 2. Modify the provided template to complete the challenge
 3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
 4. Verify your solution by running the command `cd /challenge` and `./verify main`.
-    `mair` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
+    `main` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
