@@ -209,20 +209,9 @@ You will implement a program that asks the user for a number. If the number is g
 In addition, you will implement the below functionality using if, else, and else if statements. 
 - If the number is even, print to the screen "Your number is even." If it isn't even, print "Your number is odd" to the screen instead.
 - If the number is GREATER THAN 75, but LESS THAN 90, print to the screen "Your number is between 75 and 90." Otherwise, if the number GREATER THAN 50 but LESS THAN 75, print to the screen "Your number is between 50 and 75." Otherwise, print "Your number is less than 50."
-- If the number is GREATER THAN 10, but LESS THAN 25, print "Your number is between 10 and 25." Otherwise, if the number is GREATER THAN 25 but LESS THAN 50, print "Your number is between 25 and 50." Otherwise, print "You have a weird number..."
+- ONLY IF the number is less than 50, do the following checks. If the number is GREATER THAN 10, but LESS THAN 25, print "Your number is between 10 and 25." Otherwise, if the number is GREATER THAN 25 but LESS THAN 50, print "Your number is between 25 and 50." Otherwise, print "You have a weird number..."
 
 A template has been provided; use the provided functions and add to the existing code where indicated.
-
-## BONUS
-Once you have completed the challenge as described above, you may attempt this bonus challenge.
-
-The descriptions above do not consistently account for every possible scenario. For example, examine the number 50. According to the descriptions, it will say "Your number is less than 50." and then say "You have a weird number..." These situations are often called "edge cases" by developers.
-
-For this bonus, you will update your code to account for the edge cases where the user enters a value that matches a conditional check. For example if the user enters the number 50, instead of printing "greater than" or "less than" you will print "Your number is equal to 50." Other checks must be updated to either print "greater than or equal to" or "less than or equal to" as appropriate.
-
-Another unaccounted scenario exists where the number is between 90 and 100. Modify the existing control flow element to account for the this case, printing "Your number is between 90 and 100" (updating the wording as noted above.)
-
-> **HINT** There are multiple ways to solve this problem!
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.

@@ -11,12 +11,10 @@ Description: Returns true if the integer is even, and false if odd. DO NOT MODIF
 */
 func isEven(num int) bool {
 
-	var retValue bool
+	retValue = false
 
 	if 0 == num%2 {
 		retValue = true
-	} else {
-		retValue = false
 	}
 
 	return retValue
@@ -35,16 +33,16 @@ func main() {
 	/* ~*~*~*~*~*~*~*~* MODIFY CODE BELOW THIS LINE ONLY ~*~*~*~*~*~*~*~* */
 
     if /*fill in conditional statement */ {
-        fmt.Println("")
+        fmt.Println("") // Fill in the required text
         os.Exit(0) // Exit the program due to user giving improper value
     } else if /*fill in conditional statement */ {
-        fmt.Println("")
+        fmt.Println("") // Fill in the required text
         os.Exit(0) // Exit the program due to user giving improper value
-    } eles if /*fill in conditional statement */ {
-		fmt.Println("")
+    } else if /*fill in conditional statement */ {
+		fmt.Println("") // Fill in the required text
 		os.Exit(0) // Exit the program due to user giving improper value	
 	} else {
-        fmt.Println("")
+        fmt.Println("") // Fill in the required text
     }
 
     /*
