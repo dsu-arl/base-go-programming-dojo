@@ -211,11 +211,13 @@ In addition, you will implement the below functionality using if, else, and else
 - If the number is GREATER THAN 75, but LESS THAN 90, print to the screen "Your number is between 75 and 90." Otherwise, if the number GREATER THAN 50 but LESS THAN 75, print to the screen "Your number is between 50 and 75." Otherwise, print "Your number is less than 50."
 - ONLY IF the number is less than 50, do the following checks. If the number is GREATER THAN 10, but LESS THAN 25, print "Your number is between 10 and 25." Otherwise, if the number is GREATER THAN 25 but LESS THAN 50, print "Your number is between 25 and 50." Otherwise, print "You have a weird number..."
 
-A template has been provided; use the provided functions and add to the existing code where indicated.
+A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
+- `cp /challenge/main.go /home/hacker/`
+- If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
-2. Create a new file with the file extension `.go` and write your solution.
-3. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-4. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
-    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/yourFile" unless you organized your code differently.
+2. Modify the provided template to complete the challenge
+3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+4. Verify your solution by running the command `cd /challenge` and `./verify main`.
+    `mair` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
