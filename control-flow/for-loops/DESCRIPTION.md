@@ -117,10 +117,10 @@ hintLevel := 2
 hintGenerator(randomNumber, userGuess, hintLevel)
 ```
 Your program must implement the following functionality using the things you've learned in this dojo.
-- Prompt the user for a guess by printing the message "What's your guess?" to the screen.
 - If the user guesses the number correctly on the first try, print the message "On your first try?!? Congratulations!!!" to the screen and quit the program.
 - If the user does not guess the number correctly on the first guess, prompt the user for a hint by printing the message "You did not guess the number, would you like a hint? (y/n)" to the screen.
 - For subsequent guesses, print the message "You still didn't guess it, would you like another hint? (y/n)" to the screen.
+- After the first guess, prompt the user for a guess by printing the message "What's your next guess?" to the screen.
 - If the user asks more than three times for a hint, simply call the `hintGenerator` function in such a way that the default case will trigger (HINT: any value that isn't 0, 1, or 2 will trigger the default case.) Note that counting starts at 0!
 - When the user correctly guesses the number, print the message "Congratulations, you've guessed the number!" to the screen.
 - The program should loop until the user guesses the correct number.
