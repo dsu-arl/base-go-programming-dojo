@@ -26,30 +26,38 @@ def main(filename):
     resultList = results.stdout.rstrip("\n").split("\n")
     successCount = 0
 
-    if re.match(evenNums, resultList[0]):
-        successCount += 1
-    else:
-        print("ERROR: There's a problem with your even numbers.")
-    
-    if re.match(oddNums, resultList[1]):
-        successCount += 1
-    else:
-        print("ERROR: There's a problem with your odd numbers.")
-    
-    if re.match(thirdNums, resultList[2]):
-        successCount += 1
-    else:
-        print("ERROR: There's a problem with your 3rd numbers.")
-    
-    if re.match(randRange, resultList[3]):
-        successCount += 1
-    else:
-        print("ERROR: There's a problem with your random range.")
-    
-    if int(resultList[4]) >= 0 and int(resultList[4]) <= 15:
-        successCount += 1
-    else:
-        print("ERROR: There's a problem with your random loop.")
+    try:
+        if re.match(evenNums, resultList[0]):
+            successCount += 1
+        else:
+            print("ERROR: There's a problem with your even numbers.")
+        
+        if re.match(oddNums, resultList[1]):
+            successCount += 1
+        else:
+            print("ERROR: There's a problem with your odd numbers.")
+        
+        if re.match(thirdNums, resultList[2]):
+            successCount += 1
+        else:
+            print("ERROR: There's a problem with your 3rd numbers.")
+        
+        if re.match(randRange, resultList[3]):
+            successCount += 1
+        else:
+            print("ERROR: There's a problem with your random range.")
+        
+        if int(resultList[4]) >= 0 and int(resultList[4]) <= 15:
+            successCount += 1
+        else:
+            print("ERROR: There's a problem with your random loop.")
+    except Exception as e:
+        if isinstance(e, IndexError):
+            print("To get more information, implement more loops.")
+        else:
+            print("Unknown error, keep trying to implement your loops.")
+
+
     
     if 5 != successCount:
         print("Try again! Make sure you're numbers are formatted correctly!")
