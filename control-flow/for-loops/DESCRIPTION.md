@@ -108,26 +108,30 @@ for i := 0; i < 10; i++ {
 While a trivial example, this shows how `break` could change a fun game into a frustrating experience. The `if` statement at the bottom will never trigger because of the `break` occuring when `i == 4` despite the for loop indicating it should iterate through 10. The cause of the problem here is easy to identify, however real world scenarios can be much more complex and difficult to spot especially when multiple layers of functionality are in play.
 
 # Challenge
-In this challenge, you will write a program that asks the user to guess a random number. A function has been provided that takes as input the random number, the user's guess, and a hint level, and will print hints to the screen that get progressively more revealing. Below is an example of the most common way you'll call this function.
-```go
-randomNumber := 15
-userGuess := 1
-hintLevel := 2
+In this challenge you will use for loops to print multiple components to the screen. 
+- Print the even numbers between 0 and 30, including 30, separated by spaces, all on one line: 2, 4, etc.
+- Print the odd numbers between 40 and 70, excluding 70, separated by spaces, all on one line: 41, 43, etc.
+- Print every 3rd number between 22 and 130, including 130, beginning with 22: 22 25 28 etc.
+- Use the provided function to retrieve a random number and print the numbers from 0 to it on the screen, separated by spaces.
+    - If the number generated is 8: "0 1 2 3 4 5 6 7 8" should be printed to the screen.
+- Use the provided function to retrieve a new random number. While the random number is greater than 40, generate a new random number. If you've done this more than 15 times, quit the loop. When you quit the loop, print how many times the loop executed
 
-hintGenerator(randomNumber, userGuess, hintLevel)
+Specific to this challenge, the template contains a function called `fmt.Print`. You use this function similar to `fmt.Println`, but the significant difference for this challenge is it does not append a new line. See the below example for how it is used, and its output.
+```go
+for y := 3; y <= 7; y++ {
+    fmt.Print(y, " ")   // Will print "3 4 5 6 7" to the screen, followed by a newline due to fmt.Println.
+}
+fmt.Println("")
 ```
-Your program must implement the following functionality using the things you've learned in this dojo.
-- If the user guesses the number correctly on the first try, print the message "On your first try?!? Congratulations!!!" to the screen and quit the program.
-- If the user does not guess the number correctly on the first guess, prompt the user for a hint by printing the message "You did not guess the number, would you like a hint? (y/n)" to the screen.
-- For subsequent guesses, print the message "You still didn't guess it, would you like another hint? (y/n)" to the screen.
-- After the first guess, prompt the user for a guess by printing the message "What's your next guess?" to the screen.
-- If the user asks more than three times for a hint, simply call the `hintGenerator` function in such a way that the default case will trigger (HINT: any value that isn't 0, 1, or 2 will trigger the default case.) Note that counting starts at 0!
-- When the user correctly guesses the number, print the message "Congratulations, you've guessed the number!" to the screen.
-- The program should loop until the user guesses the correct number.
+Note there are other ways to emit a newline; this has been chosen for simplicity.
+
+A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
+- `cp /challenge/main.go /home/hacker/`
+- If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
-2. Create a new file with the file extension `.go` and write your solution.
-3. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-4. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
-    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/yourFile" unless you organized your code differently.
+2. Modify the provided template to complete the challenge
+3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+4. Verify your solution by running the command `cd /challenge` and `./verify main`.
+    `main` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
