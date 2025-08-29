@@ -14,7 +14,7 @@ import os
 import subprocess
 import re
 
-def regularChallenge(filename):
+def main(filename):
     resultDict = dict({
         "-5":"Your number must be positive, run the program again.\n",
         "0":"You cannot choose zero, run the program again.\n",
@@ -56,13 +56,6 @@ def regularChallenge(filename):
         for item in failedCases:
             print(f"{item} ",end="")
         print("")
-
-def main(filename: str):
-
-    if re.search("BONUS_", filename):
-        print("yep")
-    else:
-        regularChallenge(filename)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

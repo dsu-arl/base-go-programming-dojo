@@ -1,5 +1,7 @@
 name: Control Flow
 challenges:
+- id: for-loops
+  name: For loops
 - id: if-statements
   name: If Statements
   allow_privileged: false
