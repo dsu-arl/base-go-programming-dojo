@@ -6,4 +6,8 @@ modules:
   image: whatupdoc6130/pwncollege:goenv
 - id: functions
   name: Functions
+  image: whatupdoc6130/pwncollege:goenv
+- id: control-flow
+  name: Control Flow
+  image: whatupdoc6130/pwncollege:goenv
 type: roadshow

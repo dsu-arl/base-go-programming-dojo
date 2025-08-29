@@ -1,0 +1,68 @@
+#!/usr/bin/exec-suid --real -- /usr/bin/python3 -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+import os
+import subprocess
+import re
+
+def main(filename):
+    resultDict = dict({
+        "-5":"Your number must be positive, run the program again.\n",
+        "0":"You cannot choose zero, run the program again.\n",
+        "10":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYou have a weird number...\n",
+        "25":"Evaluating the number...\nYour number is odd.\nYour number is less than 50.\nYou have a weird number...\n",
+        "50":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYou have a weird number...\n",
+        "75":"Evaluating the number...\nYour number is odd.\nYour number is less than 50.\nYou have a weird number...\n",
+        "90":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYou have a weird number...\n",
+        "100":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYou have a weird number...\n",
+        "11":"Evaluating the number...\nYour number is odd.\nYour number is less than 50.\nYour number is between 10 and 25.\n",
+        "12":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYour number is between 10 and 25.\n",
+        "26":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nyour number is between 25 and 50.\n",
+        "27":"Evaluating the number...\nYour number is odd.\nYour number is less than 50.\nyour number iS between 25 and 50.\n",
+        "51":"Evaluating the number...\nYour number is odd.\nyour number is between 50 and 75.\n",
+        "52":"Evaluating the number...\nYour number is even.\nyour number is between 50 and 75.\n",
+        "76":"Evaluating the number...\nYour number is even.\nyour number is between 75 and 90.\n",
+        "77":"Evaluating the number...\nYour number is odd.\nyour number is between 75 and 90.\n",
+        "91":"Evaluating the number...\nYour number is odd.\nYour number is less than 50.\nYou have a weird number...\n",
+        "92":"Evaluating the number...\nYour number is even.\nYour number is less than 50.\nYou have a weird number...\n"
+    })
+    
+    testCount = len(resultDict)
+    successCount = 0
+    failedCases = list()
+
+    for key in resultDict:
+        results = subprocess.run([filename, key], capture_output=True, text=True)
+
+        if re.match(resultDict[key], results.stdout, flags=re.IGNORECASE):
+            successCount += 1
+        else:
+            failedCases.append(key)
+    
+    if successCount == testCount:
+        print("Congratulations! You've passed!")
+        print_flag()
+    else:
+        print("You did not handle the following values correctly: ",end="")
+        for item in failedCases:
+            print(f"{item} ",end="")
+        print("")
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting.")
+        sys.exit(0)
+
+    if os.path.exists(sys.argv[1]):
+        main(sys.argv[1])
+    else:
+        print(f"ERROR: Cannot find file: {sys.argv[1]}, ensure it exists and try again.")
