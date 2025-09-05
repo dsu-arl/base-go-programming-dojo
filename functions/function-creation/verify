@@ -1,4 +1,4 @@
-#!/usr/bin/exec-suid --real -- /usr/bin/python -I
+#!/usr/bin/exec-suid --real -- /usr/bin/python3 -I
 import sys
 sys.path.append('/challenge')
 
@@ -10,3 +10,41 @@ def print_flag():
         print("Error: Flag file not found.")
 
 # Add your imports and other code below here
+import os
+import re
+import subprocess
+
+def main(filename):
+    numOne = 5
+    numTwo = 10
+    numThree = 7
+    wordOne = "miami"
+    wordTwo = "Gators"
+
+    results = subprocess.run([filename, str(numOne), str(numTwo), str(numThree), wordOne, wordTwo], capture_output=True, text=True)
+
+    resultList = results.stdout.rstrip("\n").split("\n")
+
+    if resultList[0] != "2":
+        print("ERROR: Problem with 'arithmetic' function; try again.")
+        sys.exit(0)
+    if resultList[1] != wordOne + " " + wordTwo:
+        print("ERROR: Problem with 'combination' function; try again.")
+        sys.exit(0)
+    if resultList[2] != "14":
+        print("ERROR: Problem with 'finale' function; try again.")
+        sys.exit(0)
+    
+    print("Congratulations, you've passed!")
+    print_flag()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting.")
+        sys.exit(0)
+
+    if os.path.exists(sys.argv[1]):
+        main(sys.argv[1])
+    else:
+        print(f"ERROR: Cannot find file: {sys.argv[1]}, ensure it exists and try again.")

@@ -187,15 +187,19 @@ With only one pass through the function, all the errors are reported! While one 
 
 # Challenge
 In this challenge you will write a program that uses functions. Implement the below functionality.
-- Write a function that takes three integers as arguments. It adds the first number to the third number, then subtracts the second number from the sum. If the value is negative, return 0, otherwise return the value. Print the return value to the screen.
-- Write another function that takes two strings as arguments. Concatenate them using the "+" operator, separating both words with one space, and return the new value. Print the return value to the screen.
+- Write a function called `arithmetic` that takes three integers as arguments. It adds the first number to the third number, then subtracts the second number from the sum. If the value is negative, return 0, otherwise return the value. Ask the user for these three numbers, and print the return value to the screen.
+- Write another function called `combination` that takes two strings as arguments. Concatenate them using the "+" operator, separating both words with one space, and return the new value. Ask the user for these two strings, and print the return value to the screen.
     - For example, if you call the function with the words "tiny" and "fruit" the output will be "tiny fruit"
-- Write another function that takes the input from the first two functions (an `int` and `string`). Find the length of the string, add it to the `int` argument, and return the total. Print the return value to the screen.
+- Write another function called `finale` that takes the input from the first two functions (an `int` and `string`). Find the length of the string, add it to the `int` argument, and return the total. Print the return value to the screen.
     - >__HINT__ You will use the `len` function to find the length of strings.
+
+A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
+- `cp /challenge/main.go /home/hacker/`
+- If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.
 
 1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
     - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
-2. Create a new file with the file extension `.go` and write your solution.
-3. Open a terminal in VSCode to build and run your code with the commands `go build yourFile.go` and `./yourFile`.
-4. Verify your solution by running the command `cd /challenge` and `./verify yourFile`.
-    `yourFile` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/yourFile" unless you organized your code differently.
+2. Modify the provided template to complete the challenge
+3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+4. Verify your solution by running the command `cd /challenge` and `./verify main`.
+    `main` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
