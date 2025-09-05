@@ -25,6 +25,9 @@ def main(filename):
 
     resultList = results.stdout.rstrip("\n").split("\n")
 
+    if len(resultList) != 3:
+        print("ERROR: Problem receiving output from your program; did you comment out templated code?")
+        sys.exit(0)
     if resultList[0] != "2":
         print("ERROR: Problem with 'arithmetic' function; try again.")
         sys.exit(0)
