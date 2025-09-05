@@ -1,5 +1,5 @@
 # Creating Functions
-Now that we've discussed the fundamentals, lets get into some exmaples and code!
+Now that we've discussed the fundamentals, lets get into some examples and code!
 
 One reason you build functions is to extract repeated code and place it in one location. There are many reasons to do this:
 - Develop once and reuse
@@ -169,7 +169,7 @@ func processText(input string) string {
 	return retValue
 }
 ```
-With only one pass through the function, all the errors are reported! While one decision isn't necessarily better than the other, these types of decisions can have wide ranging impacts from the ability to read and debug code to maintability. In production environments these decisions aren't usually left to individual developers, but contained in a company Coding Standard document specifying things like spaces VS tabs, function name conventions, and return statement usage.
+With only one pass through the function, all the errors are reported! While one decision isn't necessarily better than the other, these types of decisions can have wide ranging impacts from the ability to read and debug code to maintainability. In production environments these decisions aren't usually left to individual developers, but contained in a company Coding Standard document specifying things like spaces VS tabs, function name conventions, and return statement usage.
 
 
 # Challenge

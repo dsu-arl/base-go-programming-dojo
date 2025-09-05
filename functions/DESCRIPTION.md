@@ -71,7 +71,7 @@ In Go, `main` is a special function. It does not take arguments nor have a retur
 ```bash
 ./main arg1 arg2 arg3
 ```
-A package called `os` contains functionality to access these command line arguments. `os.Args` will return a slice (a mutable, or changable, view of data) containing the program name and the command line arguments. For example, the below program will print all of the command line arguments, plus program name, to the screen. If you build this program as `main` and run it as `./main abc def ghi` the output will be `[./main abc def ghi]`.
+A package called `os` contains functionality to access these command line arguments. `os.Args` will return a slice (a mutable, or changeable, view of data) containing the program name and the command line arguments. For example, the below program will print all of the command line arguments, plus program name, to the screen. If you build this program as `main` and run it as `./main abc def ghi` the output will be `[./main abc def ghi]`.
 ```go
 package main
 
