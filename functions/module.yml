@@ -1,0 +1,5 @@
+name: Functions
+challenges:
+- id: function-creation
+  name: Function Creation
+  allow_privileged: false
