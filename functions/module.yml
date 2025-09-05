@@ -3,3 +3,6 @@ challenges:
 - id: function-creation
   name: Function Creation
   allow_privileged: false
+- id: special-functions
+  name: Special Functions
+  allow_privileged: false
