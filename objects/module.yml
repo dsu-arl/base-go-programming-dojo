@@ -1,5 +1,5 @@
 name: Objects
 challenges:
-- id: classes-and-structures
-  name: Classes and Structures
+- id: arrays-and-slices
+  name: Arrays and Slices
   allow_privileged: false
