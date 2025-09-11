@@ -171,15 +171,16 @@ fmt.Println(destSlice)
 Worth a brief discussion is the `make` command. `make`, as the name suggests, creates a slice with the provided attributes. The arguments to the function are the type of slice to make, the length of the slice, and the capacity of the slice. The difference between the *length* and the *capacity* is significant; the **length** is how many elements the slice *currently* contains, and the **capacity** is the *maximum amount* of elements the slice can contain (without appending.) Without delving too deeply into the weeds, this *capacity* feature provides space for the slice to grow past what the developer might have envisioned, without requiring modification to the underlying array.
 
 # Challenge
-This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic presented **must** be used to solve the challenge.
+This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic presented **must** be used to solve the challenge. In this instance, slices *must* be used in your solution in order to get the flag!
 
-You will be provided a file containing student grades. While the format of the file is shown below, helper functions will be provided to retrieve data from the file for you. Your task is to determine the class's average grade, lowest grade, highest grade, and standard deviations based on the scores contained in the document. To determine a student's grade you will use a weighted grading scale. The first 7 scores contained in the document are assignment scores, and are weighted at 60% of the total grade. The remaining 3 scores are test grades and are weighted at 40%. Each student is guaranteed to have 10 scores, and each score is guaranteed to have a value between 0 and 99.
 
-You will be provided two helper functions.
-- `returnStudentCount` takes a file object as an argument and returns the number of student records in the file (this is represented by the first line in the file.)
-- `returnStudentScore` takes a file object and returns a 2D slice containing all of the student grades.
+## Description
+You will be provided a file containing student grades. While the format of the file is shown below, helper functions will be provided to retrieve data from the file and give it to you. Your task is to determine the class's average grade, lowest grade, highest grade, and standard deviations of the final grades based on the scores contained in the document. To determine a student's grade you will use a weighted grading scale. The first 7 scores contained in the document are assignment scores, and are weighted at 60% of the total grade. The remaining 3 scores are test grades and are weighted at 40%. Each student is guaranteed to have 10 scores, and each score is guaranteed to have a value between 0 and 99.
 
-Below is an example file, with sample output of the score results. As way of example, also included below are the correct scores for each request, including the break down of the students' weighted scores.
+You will be provided one helper functions.
+- `returnStudentData` takes a file object as an argument and returns the number of student records in the file (this is represented by the first line in the file) and a 2D slice containing all of the student grades.
+
+Below is an example file. Also provided below are the correct values for the students' weighted assignment and test scores, as well as their overall grade. These are then used to calculate the average, lowest grade, highest grade, and standard deviation of the final grade.
 ```text
 5
 96 75 67 77 54 57 0 94 80 71 
@@ -199,10 +200,24 @@ Student 5 weighted assignment, test, and overall grade: 39%, 35%, 74%
 Class average grade: 74%
 Class lowest grade : 69%
 Class highest grade: 81%
-Standard deviation :
+Final grade Standard deviation : 4%
 ```
 
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG).
+$$
+SD = \sqrt{\frac{\sum(x-\mu)^2}{N}}
+$$
+Where $x$ is an element from the set of final grades, $\mu$ is the mean of the set, $N$ is the total number of final grades.
 
+To calculate the weighted grades, you sum each grade in the category, divide by the total points of the category, then multiply by the weight. These two formulas are provided below as Weighted Assignment (WA) and Weighted Test (WT).
+
+$$WA = \frac{\sum(y)}{700} * 60\%$$
+$$WT = \frac{\sum(z)}{300} * 40\% $$
+
+## Required Packages
+You will need the `math` library to solve this challenge. **And `int` will not be the only data type required by this challenge!**
+
+## Directions
 A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
 - `cp /challenge/main.go /home/hacker/`
 - If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.

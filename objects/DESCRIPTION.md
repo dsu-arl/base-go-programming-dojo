@@ -3,6 +3,8 @@ This module is best completed after the Control Flow, Functions, and Input and O
 
 These modules will also start to use some built-in functions and features of the Go language without giving them much introduction. As these modules progress through more and more content, there will simply be too many cool things to talk about to spend time describing everything! As such, it'll be up to you the reader to go and spend time looking up the different functions, their meaning, and how you can use them to your advantage!
 
+Additionally, the challenges will become more difficult. Not everything you need to solve the challenge will be given to you; again there's just too much to cover! Instead, where applicable, specific packages that contain useful functionality will be mentioned and it'll be left to you to find the functions you need to solve the problem. You'll never be left out in the dark, but you *will* be challenged to think through the problems.
+
 ## Built-in Data Structures
 So far we've introduced data types like `int` and `bool` to store values. This is convenient when our data is simple, like storing a person's age or a person's name. But how would we store multiple peoples' ages? If it was only five people we *could* make five variables, but what if it's 100, or 1,000, or 10,000 people? What if we don't know the number of people we may need to record? As we start to learn more and approach problems we might see "out in the wild" (school, work, or various programming challenges) we need to expand how we think about data. This module introduces different ways to manage data, both how to store it (data structures) and access it (classes.)
 
