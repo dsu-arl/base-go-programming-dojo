@@ -14,7 +14,7 @@ import (
 Function responsible for reading data from file, formatting,
 and returning int values to user.
 */
-func returnStudentData(fileName string) (int, [][]int) {
+func returnStudentData(fileName string) (int, [][]float64) {
 	file, err := os.Open(fileName)
 	checkErr(err)
 	defer file.Close()
@@ -27,16 +27,17 @@ func returnStudentData(fileName string) (int, [][]int) {
 	studentCount, err := strconv.Atoi(fileScanner.Text())
 	checkErr(err)
 
-	studentGrades := make([][]int, studentCount)
+	studentGrades := make([][]float64, studentCount)
 	j := 0
 	//Read the remaining lines
 	for fileScanner.Scan() {
 		data := strings.Fields(fileScanner.Text())
 		//convert data from string to int
-		dataSlice := make([]int, 10)
+		dataSlice := make([]float64, 10)
 		for i := range data {
-			dataSlice[i], err = strconv.Atoi(data[i])
+			temp, err := strconv.Atoi(data[i])
 			checkErr(err)
+			dataSlice[i] = float64(temp)
 		}
 		studentGrades[j] = dataSlice
 		j++
@@ -59,16 +60,17 @@ func checkErr(err error) {
 func main() {
 
 	fileName := "/challenge/input.txt"
-	if len(os.Args) > 2 {
+	if len(os.Args) == 2 {
 		fileName = os.Args[1]
 	}
 	studentCount, studentGrades := returnStudentData(fileName)
-	studentLowestGrade := 0.0
-	studentHighestGrade := 0.0
+	classAverageGrade := 0.0
+	classLowestGrade := 0.0
+	classHighestGrade := 0.0
 	standardDeviation := 0.0
 	//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE ABOVE THIS LINE ~*~*~*~*~*~*~*~*
 
 	//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE BELOW THIS LINE ~*~*~*~*~*~*~*~*
 
-	fmt.Printf("%.02f, %.02f, %.02f", studentLowestGrade, studentHighestGrade, standardDeviation)
+	fmt.Printf("%.02f, %.02f, %.02f, %.02f", classAverageGrade, classLowestGrade, classHighestGrade, standardDeviation)
 }
