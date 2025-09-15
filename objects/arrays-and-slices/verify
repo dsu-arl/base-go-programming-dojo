@@ -18,7 +18,12 @@ import subprocess
 
 def testExecutable(execFile):
     results = subprocess.run([execFile, "/challenge/input_test.txt"],capture_output=True, text=True)
-    outputValues = results.stdout.split("\n")[1].split(",")
+
+    if None != results.stdout:
+        outputValues = results.stdout.split("\n")[1].split(",")
+    else:
+        print("ERROR: Unexpected output from program; have you changed the template?")
+        sys.exit(0)
     
     retValue = 0
 
