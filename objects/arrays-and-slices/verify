@@ -19,11 +19,14 @@ import subprocess
 def testExecutable(execFile):
     results = subprocess.run([execFile, "/challenge/input_test.txt"],capture_output=True, text=True)
 
-    if None != results.stdout:
+    try:
         outputValues = results.stdout.split("\n")[1].split(",")
-    else:
-        print("ERROR: Unexpected output from program; have you changed the template?")
-        sys.exit(0)
+    except IndexError as e:
+        print(f"ERROR: Unexpected output from program; have you changed the template? Original error: '{e}'")
+        sys.exit()
+    except Exception as e:
+        print("ERROR: Something went wrong, if you receive this error again please contact the admins.")
+        print(e)
     
     retValue = 0
 
@@ -62,7 +65,6 @@ def testSliceUsage(sourceCodeFile):
         usageCount = len(found)
 
         if makeCount <= 2 or usageCount <= 3:
-            print(makeCount, usageCount)
             retValue = -1
 
     return retValue
