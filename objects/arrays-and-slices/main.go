@@ -8,8 +8,6 @@ import (
 	"strings"
 )
 
-//~*~*~*~*~*~*~*~* DO NOT MODIFY THIS CODE ~*~*~*~*~*~*~*~*
-
 /*
 Function responsible for reading data from file, formatting,
 and returning int values to user.
@@ -46,8 +44,6 @@ func returnStudentData(fileName string) (int, [][]float64) {
 	return studentCount, studentGrades
 }
 
-//~*~*~*~*~*~*~*~* DO NOT MODIFY THIS CODE ~*~*~*~*~*~*~*~*
-
 /*
 Function to quit if an unrecoverable error is detected
 */
@@ -56,6 +52,12 @@ func checkErr(err error) {
 		panic(err)
 	}
 }
+
+//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE ABOVE THIS LINE ~*~*~*~*~*~*~*~*
+
+//~*~*~*~*~*~*~*~* WRITE YOUR CUSTOM FUNCTIONS HERE ~*~*~*~*~*~*~*~*
+
+//~*~*~*~*~*~*~*~* WRITE YOUR CUSTOM FUNCTIONS HERE ~*~*~*~*~*~*~*~*
 
 func main() {
 
@@ -69,6 +71,8 @@ func main() {
 	classHighestGrade := 0.0
 	standardDeviation := 0.0
 	//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE ABOVE THIS LINE ~*~*~*~*~*~*~*~*
+
+	// INSERT YOUR CUSTOM CODE
 
 	//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE BELOW THIS LINE ~*~*~*~*~*~*~*~*
 
