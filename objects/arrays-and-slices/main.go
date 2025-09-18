@@ -55,9 +55,9 @@ func checkErr(err error) {
 
 //~*~*~*~*~*~*~*~* DO NOT MODIFY CODE ABOVE THIS LINE ~*~*~*~*~*~*~*~*
 
-//~*~*~*~*~*~*~*~* WRITE YOUR CUSTOM FUNCTIONS HERE ~*~*~*~*~*~*~*~*
+//~*~*~*~*~*~*~*~* START CUSTOM FUNCTIONS ~*~*~*~*~*~*~*~*
 
-//~*~*~*~*~*~*~*~* WRITE YOUR CUSTOM FUNCTIONS HERE ~*~*~*~*~*~*~*~*
+//~*~*~*~*~*~*~*~* END CUSTOM FUNCTIONS ~*~*~*~*~*~*~*~*
 
 func main() {
 
