@@ -1,0 +1,5 @@
+name: Objects
+challenges:
+- id: arrays-and-slices
+  name: Arrays and Slices
+  allow_privileged: false
