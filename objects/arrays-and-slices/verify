@@ -1,0 +1,117 @@
+#!/usr/bin/exec-suid --real -- /usr/bin/python3 -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+import os
+import pathlib
+import re
+import subprocess
+
+
+def testExecutable(execFile):
+    results = subprocess.run([execFile, "/challenge/input_test.txt"],capture_output=True, text=True)
+
+    try:
+        outputValues = results.stdout.split(",")
+    except IndexError as e:
+        print(f"ERROR: Unexpected output from program; have you changed the template? Original error: '{e}'")
+        sys.exit(0)
+    except Exception as e:
+        print("ERROR: Something went wrong, if you receive this error again please contact the admins.")
+        print(e)
+    
+    if 1 == len(outputValues):
+        print("Unexpected output; make sure you haven't changed the template or printed extra values.")
+        sys.exit(0)
+
+    retValue = 0
+
+    # classAverageGrade
+    if "0.78" != outputValues[0].lstrip(" "):
+        print(f"ERROR: Problem with class average calculation. Expected '0.78' received '{outputValues[0]}'. Try again!")
+        retValue += 1
+    # classLowestGrade
+    if "0.64" != outputValues[1].lstrip(" "):
+        print(f"ERROR: Problem with lowest class grade. Expected '0.64' received '{outputValues[1]}' Try again!")
+        retValue += 1
+    # classHighestGrade
+    if "0.91" != outputValues[2].lstrip(" "):
+        print(f"ERROR: Problem with highest class grade. Expected '0.91' received '{outputValues[2]}' Try again!")
+        retValue += 1
+    # standardDeviation
+    if "0.05" != outputValues[3].lstrip(" "):
+        print(f"ERROR: Problem with standard deviation calculation. Expected '0.05' received '{outputValues[3]}' Try again!")
+        retValue += 1
+    
+    return retValue
+
+def testSliceUsage(sourceCodeFile):
+    sliceCreationCheck = r"make\(\[\](\[\])?[int|float64|float32][,|\)]?"
+    sliceUsageCheck = r"\[\][int|float64|float32]\)?"
+
+    retValue = 0
+
+    with open(sourceCodeFile, 'r') as file:
+        sourceCode = file.read()
+        
+        found = re.findall(sliceCreationCheck, sourceCode)
+        makeCount = len(found)
+
+        found = re.findall(sliceUsageCheck, sourceCode)
+        usageCount = len(found)
+
+        if makeCount <= 2 or usageCount <= 3:
+            retValue = -1
+
+    return retValue
+
+def main(exec, source=''):
+    
+    if len(source) == 0:
+        pathObj = pathlib.Path(exec)
+        filePath = str(pathObj.parent)
+        sourceName = pathObj.parts[len(pathObj.parts)-1] + ".go"
+        sourceFile = filePath + "/" + sourceName
+
+        if not os.path.exists(sourceFile):
+            sourceFile = input("Please enter the full path to your source code file: ")
+            if not os.path.exists(sourceFile):
+                print("ERROR: Cannot find source code file, please provide it when you run verify")
+                print("EX: './verify <go executable> <go source code>")
+                sys.exit(0)
+
+    checkUsage = testSliceUsage(sourceFile)
+    checkExecution = testExecutable(exec)
+    success = True
+
+    if 0 != checkUsage:
+        print("ERROR: slices were not used (enough) in this challenge, try again.")
+        success = False
+    if 0 != checkExecution:
+        print(f"You must fix {checkExecution} problems with your grade calculations.")
+        success = False
+    
+    if success:
+        print("Congratulations! You've successfully completed the challenge.")
+        print_flag()
+    
+
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("ERROR: Missing file to verify, exiting.")
+        sys.exit(0)
+    
+    if len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        main(sys.argv[1], sys.argv[2])
