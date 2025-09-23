@@ -148,8 +148,28 @@ printPerson(alice)
 ```
 Notice that because `bob` *is not* a pointer, we have to pass the address of the struct ('&' address of operator!), whereas `alice` **is** a pointer so we can just use it!
 
+We aren't able to describe *every* use case for new topics; there are just too many! So when we introduce something new, think about how it can be used with previous things you've learned in these modules. For example, you can create slices using structs!
+```go
+town := make([]person, 100)
+```
+And now you can iterate over `town` and access each "person's" information!
+```go
+//range returns two values, an 'iterator' value indicating what element you're on and a 'value' at that location.
+for iter, value := range town {
+    fmt.Println("Person", iter, "has name", value.first_name)
+}
+```
+
 ## Intermediate Use Cases
-Now that we have some familiarity with pointers, lets demonstrate some of their capabilities and nuances. Since pointers just contain addresses, multiple variables can contain the same address. Below we assign the `alice` pointer to a new variable `alice_temp`.
+Now that we have some familiarity with pointers, lets demonstrate some of their capabilities and nuances. 
+
+Taking the example of slices above, making a slice that is compatible with our `makePerson` function is extremely easy.
+```go
+//Now we have a slice of pointers to person structs!
+town := make([]*person, 100)
+``
+
+Since pointers just contain addresses, multiple variables can contain the same address. Below we assign the `alice` pointer to a new variable `alice_temp`.
 ```go
 alice_temp := alice
 ```
@@ -207,3 +227,49 @@ fmt.Println(bob, bob_temp, bob_temp_two)
 */
 ```
 This is why pointers, '\*' (deference) operator, and '&' (address of) operator cause so many troubles even to experienced developers. A simple flip, or omission, of '\*' and '&' can cause serious damage, AND be extremely difficult to find and debug.
+
+# Challenge
+This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge.
+
+## Description
+This challenge expands on the work done in "Arrays and Slices." If you've already completed that challenge you'll be able to reuse some of that code. If you haven't then you get to start fresh here!
+
+You'll once again be given a file containing student scores, with the same helper functions as before. Your task this time however is to create a structure that stores all of the student's scores and also stores their lowest score, highest score, and calculates the weighted final grade for the course. Therefore the structure **must at minimum** consist of a slice storing the float values, two floats storing the highest and lowest score, and a float storing the final weighted grade. Additional elements may be added for your convenience, but are not required to successfully complete the challenge.
+
+Once again the first 7 scores are assignment scores weighted at 60% and last 3 are test scores weighted at 40%. The lowest and highest score are chosen out of all the scores. Each student is guaranteed to have 10 scores, and each score is guaranteed to have a value between 0 and 99.
+
+Once completed you'll again determine the class's highest, lowest, and average(mean) grade and calculate the standard deviation. Now for the additional twist! Once the standard deviation is calculated, you will determine the number of students that land within one, two, and three standard deviations of the mean. To determine where a student's score lands, you add and subtract the standard deviation from the median score to get a range. For additional standard deviations, you multiply the value accordingly: 2x for the 2nd standard deviation, 3x for the 3rd, etc.
+
+For example, if the mean grade is 84% and the standard deviation is 5%, then you'll be counting the number of students that fall into the following bands:
+1st standard deviation: 79% - 89%
+2nd standard deviation: 74% - 94%
+3rd standard deviation: 69% - 99%
+
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG).
+$$
+SD = \sqrt{\frac{\sum(x-\mu)^2}{N}}
+$$
+Where $x$ is an element from the set of final grades, $\mu$ is the mean of the set, $N$ is the total number of final grades.
+
+To calculate the weighted grades, you sum each grade in the category, divide by the total points of the category, then multiply by the weight. These two formulas are provided below as Weighted Assignment (WA) and Weighted Test (WT).
+
+$$WA = \frac{\sum(y)}{700} * 60\%$$
+$$WT = \frac{\sum(z)}{300} * 40\% $$
+
+### Hints
+If you find yourself struggling with populating structs, give this article a read on [Medium.com](https://medium.com/@caring_smitten_gerbil_914/why-your-go-range-loop-isnt-updating-slice-values-and-what-to-do-instead-4428ae2b369e)
+
+## Required Packages
+You will need the `math` library to solve this challenge. **And `int` will not be the only data type required by this challenge!**
+
+## Directions
+A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
+- `cp /challenge/main.go /home/hacker/`
+- If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.
+
+1. Open a new VSCode Workspace environment and open the folder "/home/hacker/".
+    - If you want to organize your code into different folders, you will need to include that folder in subsequent commands.
+2. Modify the provided template to complete the challenge
+3. Open a terminal in VSCode to build and run your code with the commands `go build main.go` and `./main`.
+4. Verify your solution by running the command `cd /challenge` and `./verify main`.
+    `main` must be the absolute path to your built Go program, not your `.go` source code file. This will likely be "/home/hacker/main" unless you organized your code differently.
