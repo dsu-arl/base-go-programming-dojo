@@ -203,16 +203,17 @@ Class highest grade: 81%
 Final grade Standard deviation : 4%
 ```
 
-The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG).
-$$
-SD = \sqrt{\frac{\sum(x-\mu)^2}{N}}
-$$
-Where $x$ is an element from the set of final grades, $\mu$ is the mean of the set, $N$ is the total number of final grades.
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step) and 
+
+SD = √((∑(x-μ)²)/*n*)
+
+SD is equal to the square root of the following fraction: square the difference between *x* (an element from the set of final grades) and μ (the mean of the set) for all *x* in the set and sum the results, divided by *N* which is the total number of final grades.
 
 To calculate the weighted grades, you sum each grade in the category, divide by the total points of the category, then multiply by the weight. These two formulas are provided below as Weighted Assignment (WA) and Weighted Test (WT).
 
-$$WA = \frac{\sum(y)}{700} * 60\%$$
-$$WT = \frac{\sum(z)}{300} * 40\% $$
+WA = (∑(y)/700) \* 60\%
+
+WT = (∑(z)/300) \* 40\%
 
 ## Required Packages
 You will need the `math` library to solve this challenge. **And `int` will not be the only data type required by this challenge!**
