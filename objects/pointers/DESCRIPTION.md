@@ -245,7 +245,7 @@ For example, if the mean grade is 84% and the standard deviation is 5%, then you
 - 2nd standard deviation: 74% - 94%
 - 3rd standard deviation: 69% - 99%
 
-The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step) and 
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step).
 
 SD = √((∑(x-μ)²)/*n*)
 
