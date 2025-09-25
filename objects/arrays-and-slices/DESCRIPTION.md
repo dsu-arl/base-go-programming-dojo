@@ -203,7 +203,7 @@ Class highest grade: 81%
 Final grade Standard deviation : 4%
 ```
 
-The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step) and 
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step). 
 
 SD = √((∑(x-μ)²)/*n*)
 
