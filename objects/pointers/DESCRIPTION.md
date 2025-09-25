@@ -241,20 +241,22 @@ Once again the first 7 scores are assignment scores weighted at 60% and last 3 a
 Once completed you'll again determine the class's highest, lowest, and average(mean) grade and calculate the standard deviation. Now for the additional twist! Once the standard deviation is calculated, you will determine the number of students that land within one, two, and three standard deviations of the mean. To determine where a student's score lands, you add and subtract the standard deviation from the median score to get a range. For additional standard deviations, you multiply the value accordingly: 2x for the 2nd standard deviation, 3x for the 3rd, etc.
 
 For example, if the mean grade is 84% and the standard deviation is 5%, then you'll be counting the number of students that fall into the following bands:
-1st standard deviation: 79% - 89%
-2nd standard deviation: 74% - 94%
-3rd standard deviation: 69% - 99%
+- 1st standard deviation: 79% - 89%
+- 2nd standard deviation: 74% - 94%
+- 3rd standard deviation: 69% - 99%
 
-The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG).
-$$
-SD = \sqrt{\frac{\sum(x-\mu)^2}{N}}
-$$
-Where $x$ is an element from the set of final grades, $\mu$ is the mean of the set, $N$ is the total number of final grades.
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step) and 
+
+SD = √((∑(x-μ)²)/*n*)
+
+SD is equal to the square root of the following fraction: square the difference between *x* (an element from the set of final grades) and μ (the mean of the set) for all *x* in the set and sum the results, divided by *N* which is the total number of final grades.
 
 To calculate the weighted grades, you sum each grade in the category, divide by the total points of the category, then multiply by the weight. These two formulas are provided below as Weighted Assignment (WA) and Weighted Test (WT).
 
-$$WA = \frac{\sum(y)}{700} * 60\%$$
-$$WT = \frac{\sum(z)}{300} * 40\% $$
+WA = (∑(y)/700) \* 60\%
+
+WT = (∑(z)/300) \* 40\%
+
 
 ### Hints
 If you find yourself struggling with populating structs, give this article a read on [Medium.com](https://medium.com/@caring_smitten_gerbil_914/why-your-go-range-loop-isnt-updating-slice-values-and-what-to-do-instead-4428ae2b369e)
