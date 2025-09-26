@@ -171,7 +171,7 @@ fmt.Println(destSlice)
 Worth a brief discussion is the `make` command. `make`, as the name suggests, creates a slice with the provided attributes. The arguments to the function are the type of slice to make, the length of the slice, and the capacity of the slice. The difference between the *length* and the *capacity* is significant; the **length** is how many elements the slice *currently* contains, and the **capacity** is the *maximum amount* of elements the slice can contain (without appending.) Without delving too deeply into the weeds, this *capacity* feature provides space for the slice to grow past what the developer might have envisioned, without requiring modification to the underlying array.
 
 # Challenge
-This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic presented **must** be used to solve the challenge. In this instance, slices *must* be used in your solution in order to get the flag!
+This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge. In this instance, slices *must* be used in your solution in order to get the flag!
 
 
 ## Description

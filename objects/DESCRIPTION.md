@@ -11,7 +11,7 @@ So far we've introduced data types like `int` and `bool` to store values. This i
 Data structures can be simply defined as novel ways to store data. Some structures allow you to save multiple values of one type, while other structures allow you to save multiple values of different types. You can even create your own structures, defining exactly what types of data you want to store. But first, we'll introduce some of the built-in data structures that you'll encounter, and use, frequently.
 >__NOTE__: A more technical definition would be "a specific way to organize, manage, and store data for efficient storage and access."
 
-We'll briefly introduce arrays, slices, runes, and const here and then dive into further detail in their own challenges.
+While not a complete list of topics covered in this module, we'll briefly introduce arrays, slices, runes, and const here and then dive into further detail in their own challenges.
 
 ### Arrays
 In Go, much like every other programming language, there are built-in data structures that we can use to help us solve problems. If you've programmed in other languages you'll likely be familiar with arrays; one of the foundational data structures. The easiest way to think of arrays is to visualize a table comprised of horizontal rows and verticle columns: an array is one row of the table. Each location within an array can be referred to by many names: element, value, etc.

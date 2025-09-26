@@ -3,3 +3,6 @@ challenges:
 - id: arrays-and-slices
   name: Arrays and Slices
   allow_privileged: false
+- id: pointers
+  name: Pointers
+  allow_privileged: false
