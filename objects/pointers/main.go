@@ -91,6 +91,6 @@ func main() {
 
 	//~*~*~*~*~*~*~*~* DO NOT MODIFY CODE BELOW THIS LINE ~*~*~*~*~*~*~*~*
 
-	fmt.Printf("%.02f, %.02f, %.02f, %.02f", results.classAverageGrade, results.classLowestGrade, results.classHighestGrade, results.standardDeviation)
+	fmt.Printf("%.02f, %.02f, %.02f, %.02f\n", results.classAverageGrade, results.classLowestGrade, results.classHighestGrade, results.standardDeviation)
 	fmt.Printf("%d, %d, %d", results.studentCountSD_One, results.studentCountSD_Two, results.studentCountSD_Three)
 }
