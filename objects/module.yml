@@ -6,3 +6,6 @@ challenges:
 - id: pointers
   name: Pointers
   allow_privileged: false
+- id: classes
+  name: Classes
+  allow_privileged: false
