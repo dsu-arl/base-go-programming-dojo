@@ -199,13 +199,44 @@ First we define a new interface `circleMath` which requires the `calcDiameter` m
 > __NOTE__: Embedding can also be done with structures, but is not discussed here and left as an exercise for the reader.
 
 # Challenge
-This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge.
+For this challenge, instead of a list of strict and relatively straight-forward requirements you are given a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge.
 
 ## Description
+You will be provided code that contains elements needed to create a generic character, as well as options to build your own custom character. Please review the code to understand what is being provided. 
 
+Your task is to select one of the types of characters below and implement the remaining details.
+- Warrior
+- Wizard
+- Healer
 
+### Structs
+At minimum your implementation must include the following `struct` elements.
+- Healer
+    - 3 uses of max healing spell (15 hp healed)
+    - 5 uses of mid healing spell (10 hp healed)
+    - 7 uses of min healing spell (5 hp healed)
+    - Left arm shield type
+    - Right arm weapon
+    - Armor type
+- Warrior
+    - Number of weapons
+    - Pack of weapons (3 max)
+    - Left arm equipment
+    - Right arm equipment
+    - Armor type
 
-### Hints
+- Wizard
+    - Number of spells known
+    - Number of spells used
+    - Book of spells (6 max)
+    - Robe color
+Implementation details, such as the type or number of slices to use, are left to you.
+
+### Methods & Interfaces
+One interface has been provided that will initialize the generic character structure, but you must implement one to initialize your chosen character's structure as well. You must also implement methods and functions as necessary.
+
+## Hints
+If you think you're creating too many functions; you aren't! A good programming practice is to reduce your functionality to the smallest possible unit, and built multiple functions up from there.
 
 
 ## Required Packages
