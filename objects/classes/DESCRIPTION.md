@@ -202,47 +202,40 @@ First we define a new interface `circleMath` which requires the `calcDiameter` m
 For this challenge, instead of a list of strict and relatively straight-forward requirements you are given a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge.
 
 ## Description
-You will be provided code that contains elements needed to create a generic character, as well as options to build your own custom character. Please review the code to understand what is being provided. 
+This challenge will continue the shapes examples, but now we're switching to three dimensions; instead of circles and squares we'll be building spheres and cubes. A template has been provided with code implementing a cylinder and calculations to determine its volume and surface area. Your task is to use this code as a springboard to create structures, methods, functions, and if desired/necessary interfaces, to implement 3 different shapes:
+- Sphere
+- Cone
+- Rectangular Prism
 
-Your task is to select one of the types of characters below and implement the remaining details.
-- Warrior
-- Wizard
-- Healer
+Your shapes must, at minimum, adhere to the `geometry` interface. This means your code must, at minimum, implement these methods:
+```go
+- setDimensions([]int)
+- requestDimensions([]int)
+- calcVolume()
+- calcSurfaceArea()
+- printValues()
+```
 
-### Structs
-At minimum your implementation must include the following `struct` elements.
-- Healer
-    - 3 uses of max healing spell (15 hp healed)
-    - 5 uses of mid healing spell (10 hp healed)
-    - 7 uses of min healing spell (5 hp healed)
-    - Left arm shield type
-    - Right arm weapon
-    - Armor type
-- Warrior
-    - Number of weapons
-    - Pack of weapons (3 max)
-    - Left arm equipment
-    - Right arm equipment
-    - Armor type
-
-- Wizard
-    - Number of spells known
-    - Number of spells used
-    - Book of spells (6 max)
-    - Robe color
-Implementation details, such as the type or number of slices to use, are left to you.
-
-### Methods & Interfaces
-One interface has been provided that will initialize the generic character structure, but you must implement one to initialize your chosen character's structure as well. You must also implement methods and functions as necessary.
+This gives you access to the `initializeShape` and `calculate` functions, which you should utilize in your code rather than developing your own.
 
 ## Hints
-If you think you're creating too many functions; you aren't! A good programming practice is to reduce your functionality to the smallest possible unit, and built multiple functions up from there.
-
+N/A
 
 ## Required Packages
-
+The built-in `math` package is used by the `cylinder` code and already imported and should be the only additional package you need. You are free to use any additional packages you wish however.
 
 ## Directions
+In other challenges you have been given the code that prints the solutions. This time you must write your own. This is also part of the challenge, so pay close attention to the requirements below!
+
+Below is a list of requirements and formatting restrictions that your program ***must follow*** in order to retrieve the flag.
+- You ***must*** print all your shape's values and calculations to the screen. Use the provided `printValues()` function as the template for your own print function.
+    - You ***must*** print the name of your shape first. Capitalization is not required.
+    - You ***must*** print all of the shape's measurements. The order is not significant, but you must include the measurement's name and value separated by an '=' sign.
+    - You ***must*** print all of the shape's calculations. Again the order is not significant, but you must include the name and value separated by an '=' sign.
+    - All of this output ***must*** be on 1 line: ***do not*** use the `Println` function or the `\n` newline character as these will insert new lines. It's OK if the text naturally wraps due to the terminal size.
+    - All values ***must*** be greater than 0: 0 and negative numbers are not allowed.
+- All other output from the program will be ignored and is for your own debugging or user interaction purposes. However, following good programming practices you should minimize 
+
 A template has been provided; use the provided functions and add to the existing code where indicated. The file is located in "/challenges." Issue the following command to move the file to your local directory. ***IT WILL DELETE ANY OTHER FILE NAMED*** `main.go` ***IN THE DESTINATION. BE CAREFUL!***
 - `cp /challenge/main.go /home/hacker/`
 - If you want to organize your code into folders, instead use the command `cp /challenge/main.go /home/hacker/yourFolder` where "yourFolder" is the name of the folder you want to move the file to.
