@@ -1,0 +1,2 @@
+cylinder L:3 W:5 H:6
+sphere R:10

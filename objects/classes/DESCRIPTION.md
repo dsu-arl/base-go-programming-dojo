@@ -202,12 +202,9 @@ First we define a new interface `circleMath` which requires the `calcDiameter` m
 For this challenge, instead of a list of strict and relatively straight-forward requirements you are given a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge.
 
 ## Description
-This challenge will continue the shapes examples, but now we're switching to three dimensions; instead of circles and squares we'll be building spheres and cubes. A template has been provided with code implementing a cylinder and calculations to determine its volume and surface area. Your task is to use this code as a springboard to create structures, methods, functions, and if desired/necessary interfaces, to implement 3 different shapes:
-- Sphere
-- Cone
-- Rectangular Prism
+This challenge will continue the shapes examples, but now we're switching to three dimensions; instead of circles and squares we'll be building spheres and cubes. A template has been provided with code implementing a cylinder and calculations to determine its volume and surface area. Your task is to use this code as a springboard to create structures, methods, functions, and if necessary interfaces, to implement a sphere.
 
-Your shapes must, at minimum, adhere to the `geometry` interface. This means your code must, at minimum, implement these methods:
+Your sphere must, at minimum, adhere to the `geometry` interface. This means your code must, at minimum, implement these methods:
 ```go
 - setDimensions([]int)
 - requestDimensions([]int)
@@ -219,7 +216,7 @@ Your shapes must, at minimum, adhere to the `geometry` interface. This means you
 This gives you access to the `initializeShape` and `calculate` functions, which you should utilize in your code rather than developing your own.
 
 ## Hints
-N/A
+Your `requestDimensions` and `setDimensions` function must use a slice.
 
 ## Required Packages
 The built-in `math` package is used by the `cylinder` code and already imported and should be the only additional package you need. You are free to use any additional packages you wish however.
@@ -227,9 +224,9 @@ The built-in `math` package is used by the `cylinder` code and already imported 
 ## Directions
 In other challenges you have been given the code that prints the solutions. This time you must write your own. This is also part of the challenge, so pay close attention to the requirements below!
 
-Below is a list of requirements and formatting restrictions that your program ***must follow*** in order to retrieve the flag.
+Below is a list of requirements and formatting restrictions that your program ***must follow*** in order to retrieve the flag. These requirements are reflected by the `cylinder` object in the supplied template.
 - You ***must*** print all your shape's values and calculations to the screen. Use the provided `printValues()` function as the template for your own print function.
-    - You ***must*** print the name of your shape first. Capitalization is not required.
+    - You ***must*** print the name of your shape first followed by a ':'.
     - You ***must*** print all of the shape's measurements. The order is not significant, but you must include the measurement's name and value separated by an '=' sign.
     - You ***must*** print all of the shape's calculations. Again the order is not significant, but you must include the name and value separated by an '=' sign.
     - All of this output ***must*** be on 1 line: ***do not*** use the `Println` function or the `\n` newline character as these will insert new lines. It's OK if the text naturally wraps due to the terminal size.
