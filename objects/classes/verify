@@ -147,8 +147,9 @@ def main(exec, source=''):
         print_flag()
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 3:
         print("ERROR: Missing file to verify, exiting.")
+        print("/challenge/verify <executable path> <source code path>")
         sys.exit(0)
     
     if len(sys.argv) == 2:

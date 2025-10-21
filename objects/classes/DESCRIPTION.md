@@ -216,7 +216,7 @@ Your sphere must, at minimum, adhere to the `geometry` interface. This means you
 This gives you access to the `initializeShape` and `calculate` functions, which you should utilize in your code rather than developing your own.
 
 ## Hints
-Your `requestDimensions` and `setDimensions` function must use a slice.
+Your `requestDimensions` and `setDimensions` functions must use a slice.
 
 ## Required Packages
 The built-in `math` package is used by the `cylinder` code and already imported and should be the only additional package you need. You are free to use any additional packages you wish however.
