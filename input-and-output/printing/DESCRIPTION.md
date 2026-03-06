@@ -16,6 +16,7 @@ fmt.Println("temp =",temp,"which is my variables value")
 ```
 
 This will result in the following output
+
 ```text
 0
 My variable's value is: 0

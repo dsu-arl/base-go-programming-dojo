@@ -11,3 +11,7 @@ modules:
   name: Control Flow
   image: whatupdoc6130/pwncollege:goenv
 type: base 
+- id: objects
+  name: Objects
+  image: whatupdoc6130/pwncollege:goenv
+type: base

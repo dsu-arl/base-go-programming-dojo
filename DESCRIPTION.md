@@ -8,6 +8,7 @@ According to their [website](https://go.dev/), Go is an open-source programming 
 Below are some recommendations if you want to build your own development environment. For this Dojo everything will be provided for you, so only continue if you are interested in doing local development.
 
 There is a lot to learn about the Go environment other than just programming. In this Dojo we'll cover some of those elements as they become necessary, but a full discussion of the Go build environment is outside of this scope; more information is just a quick search-engine query away! Below are some quick links to help get you started.
+
 - [https://go.dev/doc/modules/layout](https://go.dev/doc/modules/layout)
 - [https://go.dev/doc/modules/gomod-ref](https://go.dev/doc/modules/gomod-ref)
 - [https://www.alexedwards.net/blog/an-introduction-to-packages-imports-and-modules](https://www.alexedwards.net/blog/an-introduction-to-packages-imports-and-modules)
