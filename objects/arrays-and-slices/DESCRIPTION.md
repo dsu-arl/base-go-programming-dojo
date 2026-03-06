@@ -171,7 +171,11 @@ fmt.Println(destSlice)
 Worth a brief discussion is the `make` command. `make`, as the name suggests, creates a slice with the provided attributes. The arguments to the function are the type of slice to make, the length of the slice, and the capacity of the slice. The difference between the *length* and the *capacity* is significant; the **length** is how many elements the slice *currently* contains, and the **capacity** is the *maximum amount* of elements the slice can contain (without appending.) Without delving too deeply into the weeds, this *capacity* feature provides space for the slice to grow past what the developer might have envisioned, without requiring modification to the underlying array.
 
 # Challenge
+<<<<<<< HEAD
 This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic presented **must** be used to solve the challenge. In this instance, slices *must* be used in your solution in order to get the flag!
+=======
+This challenge will be different from the challenges you've done so far (if you're going "in order" at least.) Instead of simple, strict requirements this challenge will provide a problem to solve. It'll be up to you to choose the best solution. The only requirement is that the topic(s) presented **must** be used to solve the challenge. In this instance, slices *must* be used in your solution in order to get the flag!
+>>>>>>> dev
 
 
 ## Description
@@ -203,16 +207,17 @@ Class highest grade: 81%
 Final grade Standard deviation : 4%
 ```
 
-The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG).
-$$
-SD = \sqrt{\frac{\sum(x-\mu)^2}{N}}
-$$
-Where $x$ is an element from the set of final grades, $\mu$ is the mean of the set, $N$ is the total number of final grades.
+The formula for standard deviation (SD) is provided below, as well as calculating weighted grades (WG). The formula for standard deviation can also be seen more easily [here](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step). 
+
+SD = √((∑(x-μ)²)/*n*)
+
+SD is equal to the square root of the following fraction: square the difference between *x* (an element from the set of final grades) and μ (the mean of the set) for all *x* in the set and sum the results, divided by *N* which is the total number of final grades.
 
 To calculate the weighted grades, you sum each grade in the category, divide by the total points of the category, then multiply by the weight. These two formulas are provided below as Weighted Assignment (WA) and Weighted Test (WT).
 
-$$WA = \frac{\sum(y)}{700} * 60\%$$
-$$WT = \frac{\sum(z)}{300} * 40\% $$
+WA = (∑(y)/700) \* 60\%
+
+WT = (∑(z)/300) \* 40\%
 
 ## Required Packages
 You will need the `math` library to solve this challenge. **And `int` will not be the only data type required by this challenge!**

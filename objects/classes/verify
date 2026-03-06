@@ -1,0 +1,158 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+#!/usr/bin/exec-suid --real -- /usr/bin/python3 -I
+import sys
+sys.path.append('/challenge')
+
+def print_flag():
+    try:
+        with open("/flag", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Error: Flag file not found.")
+
+# Add your imports and other code below here
+import os
+import pathlib
+import re
+import subprocess
+
+
+def testExecutable(execFile):
+    results = subprocess.run([execFile, "/challenge/input_test.txt"],capture_output=True, text=True)
+    retValue = 0
+    try:
+        # Sphere: Radius = 10, volume = 4188.79, surface area = 1256.64
+        searchResults = re.search(r'[sS]phere:.*', results.stdout)
+        outputValues = searchResults.group(0)
+    except IndexError as e:
+        print(f"ERROR: Unexpected output from program; ensure you're adhering to the requirements. Original error: '{e}'")
+        sys.exit(0)
+    except AttributeError as e:
+        print(f"ERROR: You must implement the sphere structure.")
+        sys.exit(0)
+    except Exception as e:
+        print(f"ERROR: Something went wrong, if you receive this error again please contact the admins. Original error: '{e}'")
+        sys.exit(0)
+
+    retValue = 0
+
+    # Radius
+    radiusMatch = re.search("[rR]adius ?= ?[0-9]*,?", outputValues)
+    if None == radiusMatch:
+        print(f"ERROR: You must print the radius value. Try again!")
+        retValue += 1
+    # volume
+    volumeMatch = re.search(r"[vV]olume ?= ?[0-9]*\.[0-9]{1,2},?", outputValues)
+    if None == volumeMatch:
+        print(f"ERROR:You must print the volume value. Try again!")
+        retValue += 1
+    else:
+        volumeCalcResult = re.search("4188.79", volumeMatch.group(0))
+        if None == volumeCalcResult:
+            print(f"ERROR: Incorrect volume calculation. Ensure you are only printing out 2 decimal places: IE \"XXX.XX\". Try again!")
+            retValue += 1
+    # surface area
+    surfaceAreaMatch = re.search(r"[sS]urface area ?= ?[0-9]*\.[0-9]{1,2},?", outputValues)
+    if None == surfaceAreaMatch:
+        print(f"ERROR:You must print the surface area value. Try again!")
+        retValue += 1
+    else:
+        surfaceAreaCalc = re.search("1256.64", surfaceAreaMatch.group(0))
+        if None == surfaceAreaCalc:
+            print(f"ERROR: Incorrect surface area calculation. Ensure you are only printing out 2 decimal places: IE \"XXX.XX\". Try again!")
+            retValue += 1
+
+    return retValue
+
+def testStructUsage(sourceCodeFile):
+    structCreationCheck = r"type [a-zA-Z].* struct"
+    # Dictionary
+    structMethods = {
+        "setDimensions" : None,
+        "requestDimensions" : None,
+        "calcVolume" : None,
+        "calcSurfaceArea" : None,
+        "printValues" : None,
+    }
+    retValue = 0
+
+    with open(sourceCodeFile, 'r') as file:
+        sourceCode = file.read()
+        
+        found = re.findall(structCreationCheck, sourceCode)
+        structDef = len(found)
+
+        if structDef <= 1:
+            print(f"You need to implement your shape's struct.")
+            retValue = -1
+        else:
+            for i in range(len(found)):
+                if "cylinder" not in found[i]:
+                    structName = found[i].split(" ")[1]
+                    structMethods["setDimensions"] = r''+structName+r'\) setDimensions'
+                    structMethods["requestDimensions"] = r''+structName+r'\) requestDimensions'
+                    structMethods["calcVolume"] = r''+structName+r'\) calcVolume'
+                    structMethods["calcSurfaceArea"] = r''+structName+r'\) calcSurfaceArea'
+                    structMethods["printValues"] = r''+structName+r'\) printValues'
+
+                    for key, value in structMethods.items():
+                        search = re.search(value, sourceCode)
+                        if None == search:
+                            print(f"ERROR: Method {key} not implemented.")
+                            retValue = -1
+    return retValue
+
+def main(exec, source=''):
+    
+    if len(source) == 0:
+        pathObj = pathlib.Path(exec)
+        filePath = str(pathObj.parent)
+        sourceName = pathObj.parts[len(pathObj.parts)-1] + ".go"
+        sourceFile = filePath + "/" + sourceName
+
+        if not os.path.exists(sourceFile):
+            sourceFile = input("Please enter the full path to your source code file: ")
+            if not os.path.exists(sourceFile):
+                print("ERROR: Cannot find source code file, please provide it when you run verify")
+                print("EX: './verify <go executable> <go source code>")
+                sys.exit(0)
+
+    if '' == source:
+        checkUsage = testStructUsage(sourceFile)
+    else:
+        checkUsage = testStructUsage(source)
+    checkExecution = testExecutable(exec)
+    success = True
+
+    if 0 != checkUsage:
+        print("Fix the reported errors and try again.")
+        success = False
+    if 0 != checkExecution:
+        print(f"You must fix {checkExecution} problems with your program.")
+        success = False
+    
+    if success:
+        print("Congratulations! You've successfully completed the challenge.")
+        print_flag()
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("ERROR: Missing file to verify, exiting.")
+        print("/challenge/verify <executable path> <source code path>")
+        sys.exit(0)
+    
+    if len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        main(sys.argv[1], sys.argv[2])
